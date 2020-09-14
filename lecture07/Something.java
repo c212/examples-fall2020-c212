@@ -16,6 +16,11 @@ public class Something {
     int t2 = h2 * 60 + m2; 
     System.out.println("First time in minutes: " + t1); 
     System.out.println("Second time in minutes: " + t2); 
+
+    int d = (t2 - t1); // in minutes 
+    System.out.println("Between " + time1 + " and " + time2 + " we have " + 
+                       ( d / 60 ) + " hours and " + ( d % 60 ) + " minutes."); 
+
   }
 }
 
