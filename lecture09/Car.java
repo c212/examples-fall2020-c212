@@ -8,10 +8,13 @@ public class Car {
       // but I recommend even in that case you do that to emphasize the type of variable
     }
     public void drive(double miles) { // how far you want to go in miles
-      this.fuel = this.fuel - miles / this.efficiency; // think about this formula
+      this.fuel -= miles / this.efficiency; // think about this formula
     }
     public double getGasInTank() {
       return this.fuel; // accessor and allows for fuel to be available from other classes    
+    }
+    public void addGas(double gallons) {
+      this.fuel += gallons;
     }
     public static void main(String[] args) {
       Car a = new Car(50); // create a new Car
@@ -20,6 +23,9 @@ public class Car {
       System.out.println( a.efficiency ); // expect: 50
       a.drive(100); // drive 100 miles
       System.out.println( a.getGasInTank() ); // expect: -2.0
+      System.out.println( a.efficiency ); // expect: 50
+      a.addGas(3.2); // replenishing the fuel 
+      System.out.println( a.getGasInTank() ); // expect: 1.2
       System.out.println( a.efficiency ); // expect: 50
     } // this is for this stage essentially Testing R3.18 (but for this stage!) 
 }
