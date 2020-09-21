@@ -10,13 +10,16 @@ public class Car {
     public void drive(double miles) { // how far you want to go in miles
       this.fuel = this.fuel - miles / this.efficiency; // think about this formula
     }
+    public double getGasInTank() {
+      return this.fuel; // accessor and allows for fuel to be available from other classes    
+    }
     public static void main(String[] args) {
       Car a = new Car(50); // create a new Car
       System.out.println( a ); // expect Car@abf0356e or something to that effect 
-      System.out.println( a.fuel ); // expect: 0.0
+      System.out.println( a.getGasInTank() ); // expect: 0.0
       System.out.println( a.efficiency ); // expect: 50
       a.drive(100); // drive 100 miles
-      System.out.println( a.fuel ); // expect: -2.0
+      System.out.println( a.getGasInTank() ); // expect: -2.0
       System.out.println( a.efficiency ); // expect: 50
     } // this is for this stage essentially Testing R3.18 (but for this stage!) 
 }
